@@ -1,0 +1,55 @@
+{
+    "url": "http://localhost:3000",
+    "compress": false,
+    "mail": {},
+    "database": {
+        "client": "pg",
+        "connection": {
+            "host": "localhost",
+            "user": "root",
+            "password": "",
+            "database": "event_app",
+            "charset": "utf8"
+        },
+        "pool": {
+            "min": 1,
+            "max": 10
+        }
+    },
+    "server": {
+        "host": "localhost",
+        "port": "3000"
+    },
+    "paths": {
+        "content": "public",
+        "root": "/",
+        "core": "core/",
+        "images": "images/"
+    },
+    "users": {
+        "tokenLife": 14200,
+        "photo": {
+            "extensions": [
+                ".jpg",
+                ".jpeg",
+                ".png"
+            ]
+        }
+    },
+    "uploads": {
+        "extensions": [
+            ".jpg",
+            ".jpeg",
+            ".gif",
+            ".png",
+            ".svg",
+            ".svgz"
+        ],
+        "contentTypes": [
+            "image/jpeg",
+            "image/png",
+            "image/gif",
+            "image/svg+xml"
+        ]
+    }
+}

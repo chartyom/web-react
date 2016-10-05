@@ -1,0 +1,63 @@
+{
+  "name": "eventapp",
+  "version": "0.0.1",
+  "description": "event-application",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm run dev-start",
+    "dev-start": "SET NODE_ENV=development&& pm2 start app.js --watch && pm2 logs app && concurrently --kill-others \"npm run build-js\" \"npm run build-css\" ",
+    "prod-start": "SET NODE_ENV=production&& node app.js",
+    "build-js": "webpack",
+    "build-css": "stylus -w src/client/app.styl -o public/css",
+    "compile-js-on-babel": "babel -w src -d dist",
+    "test": "SET NODE_ENV=development&& pm2 start app.js --watch",
+    "stop": "pm2 kill"
+  },
+  "author": "Chernyaev Artyom <leo240532@yandex.ru>",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.4.1",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "lodash": "^4.14.0",
+    "moment": "^2.14.1",
+    "nconf": "^0.8.4",
+    "oauth2orize": "^1.4.0",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-http-bearer": "^1.0.1",
+    "passport-oauth2-client-password": "^0.1.2",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1",
+    "string": "^3.3.1",
+    "validator": "^5.5.0"
+  },
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.10.0",
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "concurrently": "^3.1.0",
+    "debug": "^2.2.0",
+    "es6-module-loader": "^0.17.11",
+    "mocha": "^3.0.2",
+    "pm2": "^2.0.18",
+    "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.3.1",
+    "webpack": "^1.13.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-2"
+    ]
+  }
+}

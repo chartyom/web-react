@@ -1,0 +1,27 @@
+_LINK_COLOR = #bce9ff
+_LINK_COLOR_HOVER = #fff
+
+.navbar--default{
+    border-radius: 0px !important
+    background: #1f88bd
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25)
+    border: 0px
+    position: relative
+    z-index: 990
+    .navbar-brand {
+        color: _LINK_COLOR;
+        &:hover {
+            color: _LINK_COLOR_HOVER
+        }
+    }
+    .nav{
+        > li > a {
+            color: _LINK_COLOR
+            &:hover
+            &:focus{
+                color: _LINK_COLOR_HOVER
+                background-color: #1c7cad
+            }
+        }
+    }
+}
