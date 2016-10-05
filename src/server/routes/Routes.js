@@ -28,7 +28,12 @@ module.exports = function (app, express) {
                 // You can also check renderProps.components or renderProps.routes for
                 // your "not found" component or route respectively, and send a 404 as
                 // below, if you're using a catch-all route.
-                res.status(200).send(renderToString(<RouterContext {...renderProps} />))
+                //res.status(200).send();
+                res.render('main', {
+                    title: 'Главная', 
+                    description: 'Лидеры кинопроката', 
+                    content: renderToString(<RouterContext {...renderProps} />)
+                });
             } else {
                 // В случае возникновения ошибки требуется уведомить администратора
                 // Необходимо: выдать JSON ошибку, либо редирект на главную

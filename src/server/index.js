@@ -3,6 +3,8 @@ var express = require('express'),
     server = require('./server'),
     config = require('./config'),
     routes = require('./routes'),
+    hbs        = require('hbs'),
+    path = require('path'),
     //oauth = require('./handlers/authStrategy'),
     //models = require('./models'), 
     //passport = require('passport'),
@@ -23,6 +25,11 @@ module.exports = {
 
         //Secure
         app.disable('x-powered-by');
+        //Add view engine
+        app.set('view engine', 'hbs');
+        app.set('views', path.join(process.cwd(), 'views'));
+        //Handlebars layouts
+        //hbs.registerPartials('../../views');
         //Public files
         app.use(express.static(config.get("paths:content")));
         // init passport for auth

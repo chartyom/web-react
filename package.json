@@ -8,7 +8,8 @@
     "dev-start": "SET NODE_ENV=development&& pm2 start app.js --watch && pm2 logs app && concurrently --kill-others \"npm run build-js\" \"npm run build-css\" ",
     "prod-start": "SET NODE_ENV=production&& node app.js",
     "build-js": "webpack",
-    "build-css": "stylus -w src/client/app.styl -o public/css",
+    "build-css-dev": "stylus -u autoprefixer-stylus -w src/client/app.styl -o public/css",
+    "build-css-prod": "stylus -u autoprefixer-stylus -c src/client/app.styl -o public/css",
     "compile-js-on-babel": "babel -w src -d dist",
     "test": "SET NODE_ENV=development&& pm2 start app.js --watch",
     "stop": "pm2 kill"
@@ -21,6 +22,7 @@
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "express": "^4.14.0",
+    "hbs": "^4.0.1",
     "lodash": "^4.14.0",
     "moment": "^2.14.1",
     "nconf": "^0.8.4",
