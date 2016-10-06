@@ -33,6 +33,10 @@ module.exports = {
         //добавляет глобальные переменные в клиентскую часть
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV)
+        }),
+        //Минимизирует код
+        new webpack.optimize.UglifyJsPlugin({
+            compress: true
         })
     ],
     module: {

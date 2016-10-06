@@ -1,4 +1,9 @@
 {
+    "versions": {
+        "webApp": "1.0.0",
+        "androidApp": "1.0.0",
+        "iosApp": "1.0.0"
+    },
     "url": "http://localhost:3000",
     "compress": false,
     "mail": {},

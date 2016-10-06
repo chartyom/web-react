@@ -5,6 +5,7 @@ import { renderToString } from 'react-dom/server'
 import routes from '../../client/routes'
 //import AppClient from '../../client/app'
 import { match, RouterContext } from 'react-router'
+import Config from '../config'
 
 //var ReactApp = React.createFactory(AppClient);
 
@@ -30,6 +31,7 @@ module.exports = function (app, express) {
                 // below, if you're using a catch-all route.
                 //res.status(200).send();
                 res.render('main', {
+                    webAppVersion: Config.get('versions:webApp'),
                     title: 'Главная', 
                     description: 'Лидеры кинопроката', 
                     content: renderToString(<RouterContext {...renderProps} />)
