@@ -32,7 +32,15 @@ module.exports = {
     plugins: [
         //добавляет глобальные переменные в клиентскую часть
         new webpack.DefinePlugin({
-            NODE_ENV: JSON.stringify(NODE_ENV)
+            NODE_ENV: JSON.stringify(NODE_ENV),
+            'process.env': {
+                'NODE_ENV': JSON.stringify(NODE_ENV)
+            }
+        }),
+        //Подключение глобальных переменных для jquery
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
         }),
         //Минимизирует код
         new webpack.optimize.UglifyJsPlugin({

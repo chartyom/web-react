@@ -1,4 +1,5 @@
+import 'bootstrap';
 import ReactDOM from 'react-dom';
-import routes from './routes/routes';
+import routes from './routes';
 
 ReactDOM.render(routes, document.getElementById('app'));
